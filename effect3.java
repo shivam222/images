@@ -18,9 +18,7 @@ import javax.imageio.*;
 import java.io.File;
 
 class effect1  
-{
-	
-	JFrame fr=new JFrame();
+{	JFrame fr=new JFrame();
 	JPanel p1=new JPanel();
     JPanel p2=new JPanel();
 	JButton b1=new JButton("unique");
@@ -37,17 +35,13 @@ class effect1
 	int last=0;
 	FileWriter writer;
 	File pixel;
-
 	public effect1()
 	{
 		fr.setSize(1000,1000);
 		fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		fr.setTitle("IMAGE EFFECTS");
 		fr.setLayout(new BorderLayout());
-		
 		p2.setLayout(new GridLayout(0,4,2,2));
-		
-		
 		p2.add(b1);
 		p2.add(b2);
 		p2.add(b3);
@@ -56,22 +50,17 @@ class effect1
         p2.add(b5);
 		fr.add(p1,BorderLayout.NORTH);
 	    fr.add(p2,BorderLayout.SOUTH);
-
     }
-	public void effect2()
+    public void effect2()
 	{
-		
-		JFileChooser fc=new JFileChooser();
+	JFileChooser fc=new JFileChooser();
 		fc.setCurrentDirectory(new java.io.File("E:/zayn"));
 		fc.setDialogTitle("Choose your Image");
 		FileNameExtensionFilter filter = new FileNameExtensionFilter("JPG & GIF Images", "jpg", "gif");
         fc.setFileFilter(filter);
 		fr.add(fc);
-		
 	     int returnVal = fc.showOpenDialog(fr);          
         if(returnVal == JFileChooser.APPROVE_OPTION)
-			{
-				
                 ImageIcon image = new ImageIcon(fc.getSelectedFile().getAbsolutePath());
 				
                 imageLabel1.setIcon(image);
